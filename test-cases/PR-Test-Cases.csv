@@ -1,0 +1,11 @@
+﻿Test Case ID,Requirement ID,Test Type,Test Scenario (TH),Role / Precondition,Material,Quantity,Required Date,Test Steps (TH),Expected Result (TH),Actual Result,Execution Status
+TC-001,REQ-001;REQ-005,Positive,สร้าง PR ด้วยข้อมูลครบและถูกต้อง,PR_CREATOR,MAT-1001,5,2026-11-09,เปิดหน้าสร้าง PR > กรอกข้อมูลครบ > Save > เปิดดู PR,สร้าง PR ID และข้อมูลตรงตามที่กรอก,ยังไม่ได้ทดสอบ,Not Executed
+TC-002,REQ-002,Negative,ไม่กรอก Material,PR_CREATOR,(ว่าง),5,2026-11-09,เว้น Material ว่าง > กรอกช่องอื่น > Save,แจ้ง Material เป็นช่องบังคับและไม่สร้าง PR,ยังไม่ได้ทดสอบ,Not Executed
+TC-003,REQ-003,Boundary/Negative,Quantity เท่ากับ 0,PR_CREATOR,MAT-1001,0,2026-11-09,กรอก Quantity=0 > Save,แจ้ง Quantity ต้องมากกว่า 0 และไม่สร้าง PR,ยังไม่ได้ทดสอบ,Not Executed
+TC-004,REQ-003,Negative,Quantity ติดลบ,PR_CREATOR,MAT-1001,-1,2026-11-09,กรอก Quantity=-1 > Save,แจ้ง Quantity ต้องมากกว่า 0 และไม่สร้าง PR,ยังไม่ได้ทดสอบ,Not Executed
+TC-005,REQ-003,Boundary/Positive,Quantity เท่ากับ 1,PR_CREATOR,MAT-1001,1,2026-11-09,กรอก Quantity=1 > Save,สร้าง PR สำเร็จและบันทึก Quantity=1,ยังไม่ได้ทดสอบ,Not Executed
+TC-006,REQ-004,Negative,ไม่กรอก Required Date,PR_CREATOR,MAT-1001,5,(ว่าง),เว้น Required Date > Save,แจ้ง Required Date เป็นช่องบังคับและไม่สร้าง PR,ยังไม่ได้ทดสอบ,Not Executed
+TC-007,REQ-004,Boundary/Negative,Required Date ย้อนหลัง,PR_CREATOR,MAT-1001,5,2026-11-07,กรอกวันที่ก่อนวันอ้างอิง > Save,แจ้งวันที่ย้อนหลังไม่ถูกต้องและไม่สร้าง PR,ยังไม่ได้ทดสอบ,Not Executed
+TC-008,REQ-004,Boundary/Positive,Required Date เท่ากับวันอ้างอิง,PR_CREATOR,MAT-1001,5,2026-11-08,กรอกวันที่เท่ากับวันอ้างอิง > Save,สร้าง PR สำเร็จและบันทึกวันที่ถูกต้อง,ยังไม่ได้ทดสอบ,Not Executed
+TC-009,REQ-006,Authorization/Negative,VIEWER พยายามสร้าง PR,VIEWER,MAT-1001,5,2026-11-09,เข้าสู่ระบบด้วย VIEWER > พยายามสร้างและ Save PR,ปฏิเสธการสร้าง PR และไม่เกิดข้อมูลใหม่,ยังไม่ได้ทดสอบ,Not Executed
+TC-010,REQ-007,Negative,Material ไม่อยู่ใน Master Data,PR_CREATOR,MAT-9999,5,2026-11-09,กรอก Material ที่ไม่มีในข้อมูลจำลอง > Save,แจ้ง Material ไม่ถูกต้องและไม่สร้าง PR,ยังไม่ได้ทดสอบ,Not Executed
